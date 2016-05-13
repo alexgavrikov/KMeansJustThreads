@@ -1,24 +1,33 @@
-Количество потоков задаётся локальной статической константой kThreadsNum (в функции KMeans(const Points& data, const size_t K)).
-Есть папка out, куда я при тестировании сохранял файлы с результатами работ программ.
-В папке Common немного общей логики.
+РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕС‚РѕРєРѕРІ Р·Р°РґР°С‘С‚СЃСЏ Р»РѕРєР°Р»СЊРЅРѕР№ СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ РєРѕРЅСЃС‚Р°РЅС‚РѕР№ kThreadsNum (РІ С„СѓРЅРєС†РёРё KMeans(const Points& data, const size_t K)).
+Р•СЃС‚СЊ РїР°РїРєР° out, РєСѓРґР° СЏ РїСЂРё С‚РµСЃС‚РёСЂРѕРІР°РЅРёРё СЃРѕС…СЂР°РЅСЏР» С„Р°Р№Р»С‹ СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё СЂР°Р±РѕС‚ РїСЂРѕРіСЂР°РјРј.
+Р’ РїР°РїРєРµ Common РЅРµРјРЅРѕРіРѕ РѕР±С‰РµР№ Р»РѕРіРёРєРё.
 
-Для того, чтобы собрать основную программу надо запустить:
+Р”Р»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ СЃРѕР±СЂР°С‚СЊ РѕСЃРЅРѕРІРЅСѓСЋ РїСЂРѕРіСЂР°РјРјСѓ РЅР°РґРѕ Р·Р°РїСѓСЃС‚РёС‚СЊ:
+
 	make -f KMeansMakefile
-Для того, чтобы собрать программу-тест надо запустить:
+Р”Р»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ СЃРѕР±СЂР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ-С‚РµСЃС‚ РЅР°РґРѕ Р·Р°РїСѓСЃС‚РёС‚СЊ:
+
 	make -f TestMakefile
 
-Запуск основной программы:
+Р—Р°РїСѓСЃРє РѕСЃРЅРѕРІРЅРѕР№ РїСЂРѕРіСЂР°РјРјС‹:
+
 	kmeans number_of_clusters input_file output_file
-Например:
+РќР°РїСЂРёРјРµСЂ:
+
 	./kmeans.out 10 shad.learn out/just_threads_centroids_K=10.txt
 
-Запуск теста:
+Р—Р°РїСѓСЃРє С‚РµСЃС‚Р°:
+
 	test_main input_file_with_test_data input_file_with_centroids output_file
-Например:
+РќР°РїСЂРёРјРµСЂ:
+
 	/test_main.out shad.test out/just_threads_centroids_K=10.txt out/just_threads_RES_K=10.txt
 
 
-Формат вывода центроидов в файл:
- centroid_id:0 \t component \t component \t ... \t component
-...
- centroid_id:K-1 \t component \t component \t ... \t component
+Р¤РѕСЂРјР°С‚ РІС‹РІРѕРґР° С†РµРЅС‚СЂРѕРёРґРѕРІ РІ С„Р°Р№Р»:
+
+	centroid_id:0 \t component \t component \t ... \t component
+ 
+	...
+
+	centroid_id:K-1 \t component \t component \t ... \t component
